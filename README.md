@@ -1,2 +1,2 @@
-# chessviz
+# Geometry
 Лабораторная работа 1
