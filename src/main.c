@@ -1,7 +1,4 @@
-#include "check_data_strokes.h"
-#include "get_count_strokes.h"
-#include "get_data.h"
-#include "print_rezult.h"
+#include "circle.h"
 #include <stdio.h>
 #include <stdlib.h>
 
