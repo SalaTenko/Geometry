@@ -3,7 +3,7 @@ OBJ_CATALOG=build
 CC=gcc
 CFLAGS=-c -Wall -Werror
 LDFLAGS=-Wall -Werror
-SOURCES=main.c get_count_strokes.c get_data.c print_rezult.c get_sum.c check_data_strokes.c
+SOURCES= main.c circle.c
 VPATH=src
 
 .PHONY: all clean
