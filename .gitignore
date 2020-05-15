@@ -1,1 +1,5 @@
-circle
+a.out
+.main.c.swp
+Test.txt
+main
+*.o

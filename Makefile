@@ -1,23 +1,13 @@
-OBJ_CATALOG=build
+all: bin/circle
 
-CC=gcc
-CFLAGS=-c -Wall -Werror
-LDFLAGS=-Wall -Werror
-SOURCES= main.c circle.c
-VPATH=src
+bin/circle: build/circle.o build/main.o
+	gcc -Wall -Werror build/circle.o build/main.o -o bin/circle -lm
 
-.PHONY: all clean
+build/circle.o: src/circle.h src/circle.c
+	gcc -I src -Wall -Werror -c src/circle.c -o build/circle.o -lm
 
-OBJECTS=$(addprefix $(OBJ_CATALOG)/, $(SOURCES:.c=.o))
-EXECUTABLE=geometry
+build/main.o: src/circle.h src/main.c
+	gcc -I src -Wall -Werror -c src/main.c -o build/main.o -lm
 
-all: $(SOURCES) $(EXECUTABLE)
-
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o bin/main
-
-$(OBJ_CATALOG)/%.o: %.c
-	$(CC) $(CFLAGS) $< -o $@
-
-clean:
-	rm -rf $(OBJ_CATALOG)/*.o  bin/*.exe
+clear:
+	rm -rf build/*.o bin/circle
